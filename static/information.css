@@ -1,0 +1,201 @@
+
+@import url('barralateral.css');
+
+
+a.information{
+    background: #585858;
+    pointer-events: none; 
+    cursor: default; 
+}
+
+
+
+   .ventanaAccion{
+
+
+    height: 100%;    
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*CSS CABEZERA*/
+
+.Cabezera{
+
+
+    height: 15%;    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Cabezera > div{
+
+    height: 100%;    
+    width: 50%;
+}
+
+
+.kera-online> p{
+color: #00A739;
+
+}
+.kera{
+    margin-top: 25%;
+}
+
+.kera> b{
+    font-size: 115%;
+}
+
+
+.conteiner-kera-online{
+    padding-left: 4%;
+}
+
+.kera-online{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -8%;
+    }
+
+
+.punto{
+background-color: #00A739;
+width: 10px;
+height: 10px;
+border-radius: 100%;    
+margin-right: 2%;
+
+}
+
+.help> p{
+    color: #767676;
+    font-size: 120%;
+    
+}
+
+
+.help{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%; 
+     margin-right: 6%;
+   padding-left: 75%;
+}
+
+
+
+.pregunta{
+    margin-top: 20%;
+    height: 28%;
+    width: 80%;
+    padding-left: 14%;
+
+}
+
+.contenido{
+    height:75%;    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-descripcion{
+    height: 30%;
+    width: 100%;
+
+}
+
+.contenido-descripcion >p{
+
+margin-left: 8%;
+margin-right: 8%;
+font-size: 130%;
+}
+
+.detalles{
+
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.detalles > div{
+    padding-top: 4%;
+    width: 33.3%;
+    height: 100%;
+    padding-left: 10%;
+    align-items: center;
+
+}
+
+
+
+.detalles > div>b{
+    font-size: 125%;
+    margin-left: 10%;
+ 
+}
+
+
+
+.detalles > div > div{
+
+    width: 55%;
+    height: 50%;
+    border: 3px solid black;
+    margin-top: 5%;
+}
+
+
+
+
+/* PARTE DE ABAJO */
+.fondo{
+    height: 20%;    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fondo>div{
+    height: 100%;    
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+.fondo>div >p{
+    font-size: 125%;
+    padding-left: -10%;
+}
+
+
+.Universidad{
+    width: 20%;
+    height: 78%;
+    margin-left: 5%;
+   margin-right: 3%;
+}
+
+.Facultad{
+    width: 20%;
+    height: 60%;
+
+}
+
+.contenedorFacultad>p {
+    margin-left: 20%;
+    margin-right: 3%;
+}

@@ -1,4 +1,4 @@
-
+/*CSS BARRA LATERAL*/
 html, body{
     height:100%;
     width:100%;
@@ -97,4 +97,5 @@ html, body{
 
 .barraLateral > a:hover{
     background: #585858;
+  
    }
