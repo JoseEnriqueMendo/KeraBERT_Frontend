@@ -1,6 +1,6 @@
 
 @import url('barralateral.css');
-
+@import url('cabezera.css');
 
 a.information{
     background: #585858;
@@ -8,98 +8,8 @@ a.information{
     cursor: default; 
 }
 
-
-
-   .ventanaAccion{
-
-
-    height: 100%;    
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*CSS CABEZERA*/
-
-.Cabezera{
-
-
-    height: 15%;    
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.Cabezera > div{
-
-    height: 100%;    
-    width: 50%;
-}
-
-
-.kera-online> p{
-color: #00A739;
-
-}
-.kera{
-    margin-top: 25%;
-}
-
-.kera> b{
-    font-size: 115%;
-}
-
-
-.conteiner-kera-online{
-    padding-left: 4%;
-}
-
-.kera-online{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: -8%;
-    }
-
-
-.punto{
-background-color: #00A739;
-width: 10px;
-height: 10px;
-border-radius: 100%;    
-margin-right: 2%;
-
-}
-
-.help> p{
-    color: #767676;
-    font-size: 120%;
-    
-}
-
-
-.help{
-    display: flex;
-    flex-direction: row;
-    margin-top: 3%; 
-     margin-right: 6%;
-   padding-left: 75%;
-}
-
-
-
-.pregunta{
-    margin-top: 20%;
-    height: 28%;
-    width: 80%;
-    padding-left: 14%;
-
-}
-
 .contenido{
-    height:75%;    
+    height:65%;    
     width: 100%;
     display: flex;
     flex-direction: column;

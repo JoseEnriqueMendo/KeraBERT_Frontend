@@ -1,0 +1,42 @@
+
+@import url('barralateral.css');
+@import url('cabezera.css');
+
+
+a.casoClinico{
+    background: #585858;
+    pointer-events: none; 
+    cursor: default; 
+}
+
+
+
+
+/*CSS CABEZERA*/
+
+
+.contenido{
+    height:50%;    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* PARTE DE ABAJO */
+.fondo{
+    height: 35%;    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nota{
+
+    height: 98%;
+    width: 30%;
+    margin-left: 70%;
+
+
+}

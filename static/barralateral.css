@@ -26,6 +26,12 @@ html, body{
     margin-right: 18%;
     }
 
+    .barraLateral > h1 >a {
+        text-decoration: none;
+        color: black;
+    }
+
+
 .descripcion {
     display: flex;
     align-items: center;
@@ -99,3 +105,17 @@ html, body{
     background: #585858;
   
    }
+
+   
+   .ventanaAccion{
+
+
+    height: 100%;    
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 6px solid black;
+
+
+}
