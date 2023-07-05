@@ -1,0 +1,39 @@
+{% extends './layout.html' %}
+{% block title %} {{ title }} {% endblock title %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <!-- Titulo y descripción -->
+    <div class="row">
+        <h2>Formulario de Registro</h2>
+        <form class="mt-5" action="/update/{{paciente.Dni}}" method="POST">
+            <div class="form-group mb-3">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" value="{{paciente.Nombre}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" name="apellido" value="{{paciente.Apellido}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" name="fechaNacimiento" value="{{paciente.Fecha_Nacimiento}}">
+            </div>
+            <div class="form-group mb-3">
+                <label for="genero">Género:</label>
+                <select class="form-control" name="genero" >
+                    <option {% if paciente.Genero == "Masculino" %} selected {% endif %}>Masculino</option>
+                    <option {% if paciente.Genero == "Femenino" %} selected {% endif %}>Femenino</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" class="form-control" name="telefono" value="{{paciente.Telefono}}">
+            </div>
+            <button type="submit" class="btn btn-primary mt-5">Actualizar</button>
+        </form>
+    </div>
+    
+</div>
+{% endblock body %} 

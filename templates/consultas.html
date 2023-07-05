@@ -1,0 +1,50 @@
+{% extends './layout.html' %}
+{% block title %} {{ title }} {% endblock title %}
+
+
+
+
+{% block body %}
+    <div class="container my-4">
+        <div class="row">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button class="btn-close" type="button" data-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <!-- Botón Nuevo Registro -->
+            <a href="{{ url_for('nueva_consulta') }}" class="btn btn-primary mb-3">Nuevo Registro</a>
+            <table id="datatable_users" class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="centered">Historial Medico</th>
+                    <th class="centered">Tratamiento</th>
+                    <th class="centered">Tiempo Registro</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for data in consulta %}
+                    <tr>
+                        <td class="centered">{{data.historial_medico}}</td>
+                        <td class="centered">{{data.tratamiento}}</td>
+                        <td class="centered">{{data.tiempo_registro}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %} 
+
+

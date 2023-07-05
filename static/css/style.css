@@ -1,0 +1,106 @@
+body{
+    background: #eee;
+}
+
+#side_nav{
+    background: #B2B2B2;
+    min-width: 300px;
+    max-width: 300px;
+    transition: all 0.2s;
+}
+
+.content{
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+hr.h-color {
+    border: 0;
+    height: 1px;
+    background: #eee;  /* Puedes cambiar este color al que desees */
+}
+
+.sidebar li.active{
+    background: #eee;
+    border-radius: 8px;
+}
+
+.sidebar li.active a, .sidebar li.active a:hover{
+    color: #000;
+}
+
+.sidebar li a{
+    color: #fff;
+}
+
+@media(max-width: 767px){
+    #side_nav{
+        margin-left: -300px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #side_nav.active{
+        margin-left: 0;
+    }
+}
+
+.img-resize {
+    width: 20%;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 3%;
+    object-fit: contain;
+}
+
+.img-logo {
+    width: 70%;
+    object-fit: contain;
+}
+
+.img-esquema {
+    height: auto;
+    width: 80%;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+.centered {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/* Estilos para la tabla específica */
+.dataframe {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.dataframe thead{
+    display: none;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.dataframe th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para hacer la tabla responsive */
+@media (max-width: 768px) {
+    .dataframe {
+        width: 100%;
+    }
+    .dataframe td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+}

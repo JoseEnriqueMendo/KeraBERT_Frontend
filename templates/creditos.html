@@ -1,0 +1,51 @@
+{% extends './layout.html' %}
+{% block title %} {{ data.titulo }} {% endblock title %}
+
+
+{% block body %}
+    
+<div class="container mt-5">
+    <!-- Titulo y descripción -->
+    <div class="row">
+    <div class="col text-center">
+        <h1>Agradecimientos</h1>
+        <p class="mt-5" style="white-space: pre-line;">Nos gustaría expresar nuestra más profunda gratitud al profesor David Mauricio Sanchez, por su orientación, paciencia y constante apoyo durante el desarrollo de esta investigación.
+            
+            Apreciamos la valiosa contribución de los compañeros Luis Yauri y Allison Arroyo, que proporcionó los recursos necesarios para realizar esta investigación.
+            
+            Además, agradecemos a Dra. Maria Alejandra por proporcionar datos esenciales y por sus valiosos comentarios durante la revisión del documento.
+            
+            Finalmente, agradecemos a la Universidad Nacional Mayor de San Marcos y la Facultad de Ingeniería de Sistemas e Informática por su valiosa aportación de los conocimientos necesarios y constante capacitación. </p>
+    </div>
+    </div>
+
+    <!-- 3 columnas para fotos -->
+    <div class="row mt-5">
+    <div class="col-md-4 text-center">
+        <img src="#" alt="Autor 1" class="img-fluid">
+        <p>Alumno: Oskar Cangahuala Garcia</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <img src="#" alt="Autor 2" class="img-fluid">
+        <p>Alumno: Jose Enrique Mendo</p>
+    </div>
+    <div class="col-md-4 text-center">
+        <img src="#" alt="Asesor" class="img-fluid">
+        <p>Prof. David Mauricio Sanchez</p>
+    </div>
+    </div>
+
+    <!-- 2 imágenes adicionales debajo -->
+    <div class="row" style="margin-top: 150px;">
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static',filename='assets/fisilogo.png')}}" alt="Fisi" class="img-fluid img-resize">
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static',filename='assets/sanmarcoslogo.png')}}" alt="UNMSM" class="img-fluid img-resize">
+    </div>
+    </div>
+</div>
+{% endblock body %} 
+
+
+

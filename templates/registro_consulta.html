@@ -1,0 +1,68 @@
+{% extends './layout.html' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+
+{% block body %}
+<div class="container my-4">
+    <div class="col-sm-12 col-md-10 col-lg-8">
+        {% if not (resultados and paciente and parrafo)%}
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title text-center">Subir archivo Excel</h5>
+                <form action="{{url_for('upload_file')}}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" accept=".xlsx">
+                    <input type="submit" value="Subir archivo">
+                </form>
+                </div>
+            </div>
+        {% endif %}
+        <div class="container mt-3">
+            {% if table_html %}
+                {{ table_html|safe }}
+                <div class="container mt-3">
+                    <a href="/generar_consulta/{{dni_paciente}}" ><button type="submit" class="btn btn-primary mt-3">Generar Consulta</button></a>
+                </div>
+            {% elif (resultados and paciente) %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Columna de la tabla con los datos de una lista -->
+                        <table class="table mt-5">
+                            <tbody>
+                                <tr><td><b>DNI:</b> {{ paciente.Dni }}</td> </tr> 
+                                <tr><td><b>Nombre:</b> {{ paciente.Nombre }} {{ paciente.Apellido }} </td></tr> 
+                                <tr><td><b>Fecha Nacimiento:</b> {{ paciente.Fecha_Nacimiento }}</td> </tr> 
+                                <tr><td><b>Genero:</b> {{ paciente.Genero }}</td> </tr>                     
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Columna de la imagen con los datos de otra lista -->
+                        {% if resultados[0] == 'ICRS'%}
+                            <img src="{{ url_for('static', filename='assets/icrs.jpg') }}" alt="Imagen" class="img-fluid">
+                        {% elif resultados[0] == 'CXL' %}
+                            <img src="{{ url_for('static', filename='assets/cxl.jpg') }}" alt="Imagen" class="img-fluid">
+                        {% elif resultados[0] == 'Keratoplasty' %}
+                            <img src="{{ url_for('static', filename='assets/keratoplasty.jpg') }}" alt="Imagen" class="img-fluid">
+                        {% endif %}    
+                        <table class="table mt-5">
+                            <tbody>
+                                <tr><td><b>Tratamiento:</b> {{ resultados[0] }}</td> </tr> 
+                                <tr><td><b>Precisión:</b> {{resultados[1]}} </td></tr>       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <form action="/registrar_caso_clinico/{{paciente.Dni}}" method="POST">
+                    <input type="hidden" name="tratamiento" value="{{resultados[0]}}">
+                    <input type="hidden" name="parrafo" value="{{parrafo}}">
+                    <button id="enviar-btn" class="btn btn-primary">Registrar caso clínico</button>
+                </form>
+                
+            {% else %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock body %} 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{{ url_for('static',filename='css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<body>
+    <div class="main-container d-flex">
+        <div class="sidebar" id="side_nav">
+            <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+                <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2">KB</span><span class="text-white">KeraBERT</span></h1>
+                <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fas fa-stream"></i></button>
+            </div>
+
+
+            <div class="mt-4">
+                <img src="{{ url_for('static',filename='assets/cornealogo.png')}}" alt="Cornea Logo" class="img-fluid mx-auto d-block img-logo">
+            </div>
+
+            <ul class="list-unstyled px-2">
+                <li class="{% if request.path == url_for('inicio') %}active{% endif %}"><a href="{{url_for('inicio')}}" class="text-decoration-none px-3 py-2 d-block mt-3"> <i class="fas fa-info-circle"></i> Informacion</a></li>
+                <li class="{% if request.path == url_for('pacientes') %}active{% endif %} "><a href="{{url_for('pacientes')}}" class="text-decoration-none px-3 py-2 d-block mt-3"> <i class="fas fa-user-md"></i> Pacientes</a></li>
+                <li class="{% if request.path == url_for('consultas') %}active{% endif %} "><a href="{{url_for('consultas')}}" class="text-decoration-none px-3 py-2 d-block mt-3"> <i class="fas fa-file-medical"></i> Consultas</a></li>
+                <li class="{% if request.path == url_for('creditos') %}active{% endif %} "><a href="{{url_for('creditos')}}" class="text-decoration-none px-3 py-2 d-block mt-3"> <i class="fas fa-user-secret"></i> Creditos</a></li>
+            </ul>
+            <hr class="h-color mx-2">
+        </div>
+        <div class="content">
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between d-md-none d-block">
+                        <a href="{{url_for('inicio')}}" class="navbar-brand">KeraBERT</a>
+                        <button class="btn px-1 py-0 open-btn"> <i class="fas fa-stream"></i> </button>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Version 1.0</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content px-3 pt-4">
+                {% block body %}{% endblock body %}
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script>
+        $(".open-btn").on('click', function(){
+            $(".sidebar").addClass('active');
+            
+        })
+
+        $(".close-btn").on('click', function(){
+            $(".sidebar").removeClass('active');
+            
+        })
+    </script>
+</body>
+</html>
